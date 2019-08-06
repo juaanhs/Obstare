@@ -1,0 +1,16 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.juaanhs.obstare.ui.fragment.PacientesFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEE4DA"
+        android:gravity="center"
+        android:text="PACIENTES"
+        android:textSize="34sp" />
+
+</android.support.constraint.ConstraintLayout>
