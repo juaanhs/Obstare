@@ -18,23 +18,24 @@ import br.com.juaanhs.obstare.ui.fragment.PacientesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        configuraToolbar();
+        configuraAbas();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Obstare");
-        setSupportActionBar(toolbar);
 
-        //Configurar abas
-        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
-            getSupportFragmentManager(),
-            FragmentPagerItems.with(this)
-                .add("Cálculos", CalculosFragment.class)
-                .add("Paciêntes", PacientesFragment.class)
-                .create()
-        );
+    }
+
+    private void configuraAbas() {
+        FragmentPagerItemAdapter adapter = configuraFragmentAdapter();
+        configuraViewPager(adapter);
+    }
+
+    private void configuraViewPager(FragmentPagerItemAdapter adapter) {
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(adapter);
 
@@ -42,9 +43,24 @@ public class MainActivity extends AppCompatActivity {
         viewPagerTab.setViewPager(viewPager);
     }
 
+    private FragmentPagerItemAdapter configuraFragmentAdapter() {
+        return new FragmentPagerItemAdapter(
+                getSupportFragmentManager(),
+                FragmentPagerItems.with(this)
+                    .add("Cálculos", CalculosFragment.class)
+                    .add("Paciêntes", PacientesFragment.class)
+                    .create()
+            );
+    }
+
+    private void configuraToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Obstare");
+        setSupportActionBar(toolbar);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);

@@ -31,7 +31,7 @@
         app:stl_dividerThickness="1dp"
         app:stl_defaultTabTextAllCaps="true"
         app:stl_defaultTabTextColor="#FFFF"
-        app:stl_defaultTabTextSize="14sp"
+        app:stl_defaultTabTextSize="12dp"
         app:stl_defaultTabTextHorizontalPadding="16dp"
         app:stl_defaultTabTextMinWidth="0dp"
         app:stl_distributeEvenly="true"
