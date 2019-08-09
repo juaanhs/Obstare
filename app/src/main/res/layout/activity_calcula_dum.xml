@@ -70,7 +70,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra1"
-        app:layout_constraintEnd_toStartOf="@+id/calcula_dum_btn_calendario1"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_dum_btn_calendario_dum"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo1"
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra1"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra1" />
 
     <ImageButton
-        android:id="@+id/calcula_dum_btn_calendario1"
+        android:id="@+id/calcula_dum_btn_calendario_dum"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
@@ -214,8 +214,8 @@
         android:id="@+id/calcula_dum_resultado_ig"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
@@ -226,7 +226,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra4"
         app:layout_constraintEnd_toEndOf="@+id/calcula_dum_barra4"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo4"
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra4" />
 
@@ -243,7 +242,7 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra4" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/calcula_dum_btn_salvar"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -257,24 +256,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/botao_arredondado"
-        android:text="@string/btn_calcular"
-        android:textColor="#FFFF"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_dum_barra4"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
