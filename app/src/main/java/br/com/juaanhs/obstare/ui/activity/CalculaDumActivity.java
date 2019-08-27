@@ -11,20 +11,21 @@ import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 import br.com.juaanhs.obstare.R;
+import br.com.juaanhs.obstare.util.DataUtil;
 
 public class CalculaDumActivity extends AppCompatActivity {
 
 
     private ImageButton btnDataDum;
     private Button btnSalvar;
-    private TextView resultadoDum;
+    private TextView resultadoDum, resultadoDdc, resultadoDpp, resultadoIg;
     private DatePickerDialog datePickerDialog;
-    private Calendar calendar;
+    private DataUtil dataUtil;
+    private Calendar calendar, d;
     int ano, mes, dia;
 
 
@@ -36,8 +37,9 @@ public class CalculaDumActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setDataCalendario();
-        inicializaBotoes();
+        inicializaCamposAndBotoes();
         configuraBtnDataDum();
+        dataUtil = new DataUtil();
     }
 
     private void configuraBtnDataDum() {
@@ -54,8 +56,12 @@ public class CalculaDumActivity extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        String dataFormatada = conversorDateString(year, month, dayOfMonth);
-                        resultadoDum.setText(dataFormatada);
+                        String stringDUM = dataUtil.StringDUM(year, month, dayOfMonth);
+                        resultadoDum.setText(stringDUM);
+                        Date date = dataUtil.convertStringToDate(stringDUM);
+                        resultadoDpp.setText(dataUtil.calculaDPP(date));
+                        resultadoDdc.setText(dataUtil.calculaDPC(date));
+                        resultadoIg.setText(dataUtil.calculaIG(date));
                         setNovaDataAtual(year, month, dayOfMonth);
                     }
                 }, ano, mes, dia);
@@ -75,21 +81,12 @@ public class CalculaDumActivity extends AppCompatActivity {
         dia = calendar.get(Calendar.DAY_OF_MONTH);
     }
 
-    private String conversorDateString(int year, int month, int dayOfMonth) {
-        Date date = null;
-        String dataFormatada = dayOfMonth + "/" + (month+1) + "/" + year;
-        try {
-            date = new SimpleDateFormat("dd/MM/yyyy").parse(dataFormatada);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return sdf.format(date);
-    }
-
-    private void inicializaBotoes() {
+    private void inicializaCamposAndBotoes() {
         btnDataDum = findViewById(R.id.calcula_dum_btn_calendario_dum);
         resultadoDum = findViewById(R.id.calcula_dum_resultado_dum);
+        resultadoDdc = findViewById(R.id.calcula_dum_resultado_concepcao);
+        resultadoDpp = findViewById(R.id.calcula_dum_resultado_dpp);
+        resultadoIg = findViewById(R.id.calcula_dum_resultado_ig);
         btnSalvar = findViewById(R.id.calcula_dum_btn_salvar);
     }
 
