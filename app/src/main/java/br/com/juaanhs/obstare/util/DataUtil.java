@@ -1,5 +1,7 @@
 package br.com.juaanhs.obstare.util;
 
+import android.widget.DatePicker;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -9,28 +11,6 @@ public class DataUtil {
 
     public DataUtil() {
 
-    }
-
-
-//    private Date convertStringData (String data){
-//        data = "14/02/2019";
-//        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        LocalDate localDate = LocalDate.parse(data,formato);
-//        Date dataFormatada = Timestamp.valueOf(String.valueOf(localDate));
-//        return dataFormatada;
-//    }
-
-    public String calculaDPP() {
-
-        return "";
-    }
-
-    public Date calculaIg(Date dataAtual, Date dataDUM) {
-        Date IG = null;
-        Calendar calendar = Calendar.getInstance();
-        long mi = (dataAtual.getTime() - dataDUM.getTime());
-
-        return IG;
     }
 
     public Date convertStringToDate(String string) {
@@ -44,7 +24,7 @@ public class DataUtil {
         return date;
     }
 
-    public String convertDateToString(Date date) {
+    private String convertDateToString(Date date) {
         String dataFormatada = "";
         try {
             date = new SimpleDateFormat("dd/MM/yyyy").parse(dataFormatada);
@@ -55,7 +35,7 @@ public class DataUtil {
         return sdf.format(date);
     }
 
-    public String StringDUM(int year, int month, int dayOfMonth) {
+    public String IntsToString(int year, int month, int dayOfMonth) {
         Date date = null;
         String dataFormatada = dayOfMonth + "/" + (month + 1) + "/" + year;
         try {

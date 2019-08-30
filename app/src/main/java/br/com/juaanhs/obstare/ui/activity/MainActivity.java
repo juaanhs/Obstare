@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)
                     .add("Cálculos", CalculosFragment.class)
-                    .add("Paciêntes", PacientesFragment.class)
+                    .add("Pacientes", PacientesFragment.class)
                     .create()
             );
     }

@@ -25,11 +25,11 @@
     </android.support.design.widget.AppBarLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/calcula_usg_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/titulo_calculo_dum"
+        android:text="@string/titulo_calculo_dum_e_usg"
         android:textColor="#646464"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <View
-        android:id="@+id/calcula_dum_divisor"
+        android:id="@+id/calcula_usg_divisor"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_marginStart="16dp"
@@ -48,20 +48,20 @@
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_titulo" />
 
     <View
-        android:id="@+id/calcula_dum_barra1"
+        android:id="@+id/calcula_usg_barra_dum"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="#E4DACC"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_divisor"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_divisor"
-        app:layout_constraintTop_toBottomOf="@+id/calcula_dum_divisor" />
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
 
     <TextView
-        android:id="@+id/calcula_dum_resultado_dum"
+        android:id="@+id/calcula_usg_resultado_dum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -69,11 +69,11 @@
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra1"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
         app:layout_constraintEnd_toStartOf="@+id/calcula_dum_btn_calendario_dum"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo1"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra1"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum"
         tools:text="31/10/2019" />
 
     <TextView
@@ -84,9 +84,9 @@
         android:layout_marginLeft="8dp"
         android:text="@string/titulo_dum"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra1"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_barra1"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra1" />
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum" />
 
     <ImageButton
         android:id="@+id/calcula_dum_btn_calendario_dum"
@@ -95,23 +95,23 @@
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/btn_calendario"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra1"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_barra1"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra1"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum"
         app:srcCompat="@drawable/ic_calendario_verdelogo_24dp" />
 
     <View
-        android:id="@+id/calcula_dum_barra2"
+        android:id="@+id/calcula_usg_barra_concepcao"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:background="#E4DACC"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_divisor"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_divisor"
-        app:layout_constraintTop_toBottomOf="@+id/calcula_dum_barra1" />
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_barra_dum" />
 
     <TextView
-        android:id="@+id/calcula_dum_resultado_concepcao"
+        android:id="@+id/calcula_usg_resultado_concepcao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -119,35 +119,35 @@
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra2"
-        app:layout_constraintEnd_toStartOf="@+id/calcula_dum_btn_calendario2"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario2"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo2"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra2"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao"
         tools:text="31/10/2019" />
 
     <TextView
-        android:id="@+id/calcula_dum_titulo2"
+        android:id="@+id/calcula_usg_titulo_concepcao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="@string/titulo_concepcao"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra2"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_barra2"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra2" />
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao" />
 
     <ImageButton
-        android:id="@+id/calcula_dum_btn_calendario2"
+        android:id="@+id/calcula_usg_btn_calendario2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/btn_calendario"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra2"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_barra2"
-        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra2"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao"
         app:srcCompat="@drawable/ic_calendario_cinza_24dp" />
 
     <View
@@ -156,12 +156,12 @@
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:background="#E4DACC"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_divisor"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_divisor"
-        app:layout_constraintTop_toBottomOf="@+id/calcula_dum_barra2" />
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_barra_concepcao" />
 
     <TextView
-        android:id="@+id/calcula_dum_resultado_dpp"
+        android:id="@+id/calcula_usg_resultado_dpp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -170,14 +170,14 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra3"
-        app:layout_constraintEnd_toStartOf="@+id/calcula_dum_btn_calendario3"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario3"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo3"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_DPP"
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra3"
         tools:text="31/10/2019" />
 
     <TextView
-        android:id="@+id/calcula_dum_titulo3"
+        android:id="@+id/calcula_usg_titulo_DPP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -189,7 +189,7 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra3" />
 
     <ImageButton
-        android:id="@+id/calcula_dum_btn_calendario3"
+        android:id="@+id/calcula_usg_btn_calendario3"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
@@ -206,12 +206,12 @@
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:background="#E4DACC"
-        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_divisor"
-        app:layout_constraintStart_toStartOf="@+id/calcula_dum_divisor"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
         app:layout_constraintTop_toBottomOf="@+id/calcula_dum_barra3" />
 
     <TextView
-        android:id="@+id/calcula_dum_resultado_ig"
+        android:id="@+id/calcula_usg_resultado_ig"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -226,11 +226,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra4"
         app:layout_constraintEnd_toEndOf="@+id/calcula_dum_barra4"
-        app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo4"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo4"
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra4" />
 
     <TextView
-        android:id="@+id/calcula_dum_titulo4"
+        android:id="@+id/calcula_usg_titulo4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -242,7 +242,7 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra4" />
 
     <Button
-        android:id="@+id/calcula_dum_btn_salvar"
+        android:id="@+id/calcula_usg_btn_salvar"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"

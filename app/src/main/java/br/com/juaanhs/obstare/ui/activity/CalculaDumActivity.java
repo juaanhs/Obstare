@@ -25,9 +25,8 @@ public class CalculaDumActivity extends AppCompatActivity {
     private TextView resultadoDum, resultadoDdc, resultadoDpp, resultadoIg;
     private DatePickerDialog datePickerDialog;
     private DataUtil dataUtil;
-    private Calendar calendar, d;
-    int ano, mes, dia;
-
+    private Calendar calendar;
+    private int ano, mes, dia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +35,10 @@ public class CalculaDumActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        dataUtil = new DataUtil();
         setDataCalendario();
         inicializaCamposAndBotoes();
         configuraBtnDataDum();
-        dataUtil = new DataUtil();
     }
 
     private void configuraBtnDataDum() {
@@ -56,24 +55,25 @@ public class CalculaDumActivity extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        String stringDUM = dataUtil.StringDUM(year, month, dayOfMonth);
+                        String stringDUM = dataUtil.IntsToString(year, month, dayOfMonth);
                         resultadoDum.setText(stringDUM);
                         Date date = dataUtil.convertStringToDate(stringDUM);
                         resultadoDpp.setText(dataUtil.calculaDPP(date));
                         resultadoDdc.setText(dataUtil.calculaDPC(date));
                         resultadoIg.setText(dataUtil.calculaIG(date));
-                        setNovaDataAtual(year, month, dayOfMonth);
+                        setNovaDataAtual(view);
                     }
                 }, ano, mes, dia);
         datePickerDialog.show();
     }
 
-    private void setNovaDataAtual(int year, int month, int dayOfMonth) {
-        ano = year;
-        mes = month;
-        dia = dayOfMonth;
+    //TODO delegar responsabilidade para DataUtil
+    private void setNovaDataAtual(DatePicker view) {
+        ano = view.getYear();
+        mes = view.getMonth();
+        dia = view.getDayOfMonth();
     }
-
+    //TODO delegar responsabilidade para DataUtil
     private void setDataCalendario() {
         calendar = Calendar.getInstance();
         ano = calendar.get(Calendar.YEAR);
@@ -83,11 +83,11 @@ public class CalculaDumActivity extends AppCompatActivity {
 
     private void inicializaCamposAndBotoes() {
         btnDataDum = findViewById(R.id.calcula_dum_btn_calendario_dum);
-        resultadoDum = findViewById(R.id.calcula_dum_resultado_dum);
-        resultadoDdc = findViewById(R.id.calcula_dum_resultado_concepcao);
-        resultadoDpp = findViewById(R.id.calcula_dum_resultado_dpp);
-        resultadoIg = findViewById(R.id.calcula_dum_resultado_ig);
-        btnSalvar = findViewById(R.id.calcula_dum_btn_salvar);
+        resultadoDum = findViewById(R.id.calcula_usg_resultado_dum);
+        resultadoDdc = findViewById(R.id.calcula_usg_resultado_concepcao);
+        resultadoDpp = findViewById(R.id.calcula_usg_resultado_dpp);
+        resultadoIg = findViewById(R.id.calcula_usg_resultado_ig);
+        btnSalvar = findViewById(R.id.calcula_usg_btn_salvar);
     }
 
     @Override
