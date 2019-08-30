@@ -18,10 +18,9 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url "http://dl.bintray.com/hellmannmaicon/android" }
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

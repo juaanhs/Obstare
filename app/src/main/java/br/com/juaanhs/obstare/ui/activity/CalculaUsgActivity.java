@@ -1,25 +1,27 @@
 package br.com.juaanhs.obstare.ui.activity;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
+import br.com.forusers.heinsinputdialogs.CalculatorInputDialog;
+import br.com.forusers.heinsinputdialogs.interfaces.OnInputDoubleListener;
 import br.com.juaanhs.obstare.R;
 import br.com.juaanhs.obstare.util.DataUtil;
 
 public class CalculaUsgActivity extends AppCompatActivity {
 
-    private TextView resultadoDum, resultadoDpc, resultadoIgSemanas, resultadoIgDias, resultadoUsg, resultadoDpp;
+    private TextView resultadoDum, resultadoDpc, resultadoIgSemanas, resultadoUsg, resultadoDpp, resultadoIgDias;
     private ImageButton btnUsgSemanas, btnUsgDias, btnDataUsg;
     private Calendar calendar;
     private int ano, mes, dia;
@@ -41,9 +43,22 @@ public class CalculaUsgActivity extends AppCompatActivity {
         btnUsgDias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View editText = null;
-                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
-                        .showSoftInput(editText, 0);
+                CalculatorInputDialog dialog = new CalculatorInputDialog(CalculaUsgActivity.this);
+                dialog.setPositiveButton(new OnInputDoubleListener() {
+                    @Override
+                    public boolean onInputDouble(AlertDialog alertDialog, Double aDouble) {
+                        if(aDouble.intValue() >=7){
+                            Toast.makeText(CalculaUsgActivity.this, "O número de dias deve ser menor que 7", Toast.LENGTH_SHORT).show();
+                            resultadoIgDias.setText("_");
+                            return false;
+                        }
+                        String string = "" + aDouble.intValue();
+                        resultadoIgDias.setText(string);
+                        return false;
+                    }
+                }).show();
+                dialog.getCurrencyTextView().setVisibility(View.GONE);
+                dialog.getDotButton().setVisibility(View.INVISIBLE);
             }
         });
     }

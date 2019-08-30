@@ -31,4 +31,6 @@ dependencies {
     // Smart TABs layout
     implementation 'com.ogaclejapan.smarttablayout:library:1.7.0@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.7.0@aar'
+    // Dialog keyboard number
+    implementation 'br.com.forusers.heinsinputdialogs:input-dialogs-library:0.1.4'
 }
