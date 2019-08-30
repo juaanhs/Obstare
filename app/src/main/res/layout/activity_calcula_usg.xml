@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE4DA"
+    tools:context="br.com.juaanhs.obstare.ui.activity.CalculaUsgActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <View
+        android:id="@+id/calcula_usg_barra_dias"
+        android:layout_width="110dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
+
+    <View
+        android:id="@+id/calcula_usg_barra_semanas"
+        android:layout_width="110dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
+
+    <View
+        android:id="@+id/calcula_usg_barra_ultrasom"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_titulo_ig_usg" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/titulo_calculo_dum_e_usg"
+        android:textColor="#646464"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    <View
+        android:id="@+id/calcula_usg_divisor"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_titulo" />
+
+    <View
+        android:id="@+id/calcula_usg_barra_dum"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_barra_ultrasom" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_dum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/calcula_dum_titulo1"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum"
+        tools:text="31/10/2019" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_usg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_titulo_usg"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario_usg"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_usg"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_titulo_usg"
+        tools:text="31/10/2019" />
+
+    <TextView
+        android:id="@+id/calcula_dum_titulo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/titulo_dum"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_calendario_usg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_calendario"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_ultrasom"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_ultrasom"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_ultrasom"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_calendario_verdelogo_24dp" />
+
+    <View
+        android:id="@+id/calcula_usg_barra_concepcao"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_barra_dum" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_concepcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao"
+        tools:text="31/10/2019" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_concepcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/titulo_concepcao"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_calendario2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_calendario"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_concepcao"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_concepcao"
+        app:srcCompat="@drawable/ic_calendario_cinza_24dp" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_calendario"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_calendario_cinza_24dp" />
+
+    <View
+        android:id="@+id/calcula_dum_barra3"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:background="#E4DACC"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_barra_concepcao" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_dpp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra3"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_DPP"
+        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra3"
+        tools:text="31/10/2019" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_DPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/titulo_dpp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra3"
+        app:layout_constraintStart_toStartOf="@+id/calcula_dum_barra3"
+        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra3" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_calendario3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_calendario"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_dum_barra3"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_dum_barra3"
+        app:layout_constraintTop_toTopOf="@+id/calcula_dum_barra3"
+        app:srcCompat="@drawable/ic_calendario_cinza_24dp" />
+
+    <Button
+        android:id="@+id/calcula_usg_btn_salvar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/botao_arredondado"
+        android:text="@string/btn_salvar_paciente"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_ig_usg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/titulo_ig_idade_gestacional_do_ultrasom"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor"
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_usg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/titulo_data_do_ultrasom"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_ultrasom"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_ultrasom"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_ultrasom" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_semanas"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_editar_verdelogo_24dp"
+        android:contentDescription="@string/btn_semanas_ultrasom" />
+
+    <ImageButton
+        android:id="@+id/calcula_usg_btn_dias"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dias"
+        app:srcCompat="@drawable/ic_editar_verdelogo_24dp"
+        android:contentDescription="@string/btn_dias_ultrasom" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_semanas_ultrasom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retorno_semanas_ultrasom"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_titulo_semanas"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_semanas" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_semanas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_semanas_ultrasom"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_semanas"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_semanas"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_semanas" />
+
+    <TextView
+        android:id="@+id/calcula_usg_titulo_dias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_dias_ultrasom"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_dias"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dias" />
+
+    <TextView
+        android:id="@+id/calcula_usg_resultado_dias_ultrasom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retorno_dias_ultrasom"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintEnd_toStartOf="@+id/calcula_usg_titulo_dias"
+        app:layout_constraintStart_toStartOf="@+id/calcula_usg_barra_dias"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dias" />
+
+
+</android.support.constraint.ConstraintLayout>

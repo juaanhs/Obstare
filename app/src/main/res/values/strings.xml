@@ -1,4 +1,30 @@
 <resources>
     <string name="app_name">Obstare 1.0</string>
+    <string name="title_activity_calcula_dum">Cálculo DUM</string>
+    <string name="title_activity_calcula_usg">Cálculo USG</string>
+    <string name="title_activity_calcula_imc">Cálculo IMC</string>
+    <string name="title_activity_calcula_bishop">Cálculo BISHOP</string>
+    <string name="titulo_calculo_dum_e_usg">INFORME A DATA</string>
+    <string name="logo_app">LOGOAPP</string>
+    <string name="ig_por_dum">IG por DUM</string>
+    <string name="ig_por_usg">IG por USG</string>
+    <string name="imc_para_gestantes">IMC PARA GESTANTES</string>
+    <string name="indice_de_bishop">INDICE DE BISHOP</string>
+    <string name="btn_calendario">Botão calendário</string>
+    <string name="titulo_dum">DUM (Data da última menstruação):</string>
+    <string name="titulo_concepcao">DPC (Data provável de concepção):</string>
+    <string name="titulo_dpp">DPP (Data provável do parto):</string>
+    <string name="ig_idade_gestacional">IG (Idade Gestacional):</string>
+    <string name="btn_salvar_paciente">Salvar paciente</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="ig_resultado"></string>
+    <string name="titulo_ig_idade_gestacional_do_ultrasom">IG (Idade Gestacional) do Ultrasom:</string>
+    <string name="titulo_data_do_ultrasom">Data do ultrasom:</string>
+    <string name="retorno_semanas_ultrasom">_</string>
+    <string name="titulo_semanas_ultrasom">sem.</string>
+    <string name="titulo_dias_ultrasom">dias</string>
+    <string name="retorno_dias_ultrasom">_</string>
+    <string name="btn_dias_ultrasom">TODO</string>
+    <string name="btn_semanas_ultrasom">TODO</string>
 
 </resources>
