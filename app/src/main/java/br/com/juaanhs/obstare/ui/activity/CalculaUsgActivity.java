@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import br.com.forusers.heinsinputdialogs.CalculatorInputDialog;
 import br.com.forusers.heinsinputdialogs.interfaces.OnInputDoubleListener;
@@ -24,9 +25,12 @@ public class CalculaUsgActivity extends AppCompatActivity {
     private TextView resultadoDum, resultadoDpc, resultadoIgSemanas, resultadoUsg, resultadoDpp, resultadoIgDias;
     private ImageButton btnUsgSemanas, btnUsgDias, btnDataUsg;
     private Calendar calendar;
-    private int ano, mes, dia;
+    private Date dataUSG;
+    private boolean entrada1, entrada2, entrada3;
+    private int ano, mes, dia, igDias = 0, igSemanas = 0;
     private DatePickerDialog datePickerDialog;
     private DataUtil dataUtil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +40,47 @@ public class CalculaUsgActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         dataUtil = new DataUtil();
+        entrada1 = false;
+        entrada2 = false;
+        entrada3 = false;
         setDataCalendario();
         inicializaCamposAndBotoes();
         configuraBtnUsg();
+        configuraBtnDias();
+        configuraBtnSemanas();
+    }
 
+    private void configuraBtnSemanas() {
+        btnUsgSemanas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CalculatorInputDialog dialog = new CalculatorInputDialog(CalculaUsgActivity.this);
+                dialog.setPositiveButton(new OnInputDoubleListener() {
+                    @Override
+                    public boolean onInputDouble(AlertDialog alertDialog, Double aDouble) {
+                        if(aDouble.intValue() > 40){
+                            Toast.makeText(CalculaUsgActivity.this,
+                                    "O número de semanas deve ser menor ou igual a 40",
+                                    Toast.LENGTH_SHORT).show();
+                            resultadoIgSemanas.setText("_");
+                            return false;
+                        }
+                        igSemanas = aDouble.intValue();
+                        String string = "" + aDouble.intValue();
+                        resultadoIgSemanas.setText(string);
+                        entrada3 = true;
+                        verificaEntradas();
+                        return false;
+                    }
+                }).show();
+                dialog.getCurrencyTextView().setVisibility(View.GONE);
+                dialog.getDotButton().setVisibility(View.INVISIBLE);
+            }
+        });
+
+    }
+
+    private void configuraBtnDias() {
         btnUsgDias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,12 +89,17 @@ public class CalculaUsgActivity extends AppCompatActivity {
                     @Override
                     public boolean onInputDouble(AlertDialog alertDialog, Double aDouble) {
                         if(aDouble.intValue() >=7){
-                            Toast.makeText(CalculaUsgActivity.this, "O número de dias deve ser menor que 7", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CalculaUsgActivity.this,
+                                    "O número de dias deve ser menor que 7",
+                                    Toast.LENGTH_SHORT).show();
                             resultadoIgDias.setText("_");
                             return false;
                         }
+                        igDias = aDouble.intValue();
                         String string = "" + aDouble.intValue();
                         resultadoIgDias.setText(string);
+                        entrada1 = true;
+                        verificaEntradas();
                         return false;
                     }
                 }).show();
@@ -61,6 +107,7 @@ public class CalculaUsgActivity extends AppCompatActivity {
                 dialog.getDotButton().setVisibility(View.INVISIBLE);
             }
         });
+
     }
 
     private void configuraBtnUsg() {
@@ -70,6 +117,7 @@ public class CalculaUsgActivity extends AppCompatActivity {
                 configuraCalendario();
             }
         });
+
     }
 
     private void configuraCalendario() {
@@ -78,11 +126,49 @@ public class CalculaUsgActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String stringUSG = dataUtil.IntsToString(year, month, dayOfMonth);
+                        dataUSG = dataUtil.convertStringToDate(stringUSG);
                         resultadoUsg.setText(stringUSG);
+                        //TESTE
+                        entrada2 = true;
+                        verificaEntradas();
                         setNovaDataAtual(view);
                     }
                 }, ano, mes, dia);
         datePickerDialog.show();
+    }
+
+    private void verificaEntradas() {
+
+        if(entrada1 && entrada2 && entrada3){
+            imprimeCalculoDatas();
+        }
+    }
+
+    private void imprimeCalculoDatas() {
+        Date dataDPP = imprimirDPP();
+
+        String strDataDUM = imprimirDUM(dataDPP);
+
+        imprimirDPC(strDataDUM);
+    }
+
+    private void imprimirDPC(String strDataDUM) {
+        Date dataDUM = dataUtil.convertStringToDate(strDataDUM);
+        String strDataDPC = dataUtil.calculaDPC(dataDUM);
+        resultadoDpc.setText(strDataDPC);
+    }
+
+    private String imprimirDUM(Date dataDPP) {
+        String strDataDUM = dataUtil.calculaDUMporDPP(dataDPP);
+        resultadoDum.setText(strDataDUM);
+        return strDataDUM;
+    }
+
+    private Date imprimirDPP() {
+        Date dataDPP = dataUtil.calculaDPPporIG(igSemanas, igDias, dataUSG);
+        String strDataDPP = dataUtil.convertDateToString(dataDPP);
+        resultadoDpp.setText(strDataDPP);
+        return dataDPP;
     }
 
     private void inicializaCamposAndBotoes() {

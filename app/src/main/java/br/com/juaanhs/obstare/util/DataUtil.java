@@ -24,7 +24,7 @@ public class DataUtil {
         return date;
     }
 
-    private String convertDateToString(Date date) {
+    public String convertDateToString(Date date) {
         String dataFormatada = "";
         try {
             date = new SimpleDateFormat("dd/MM/yyyy").parse(dataFormatada);
@@ -55,9 +55,9 @@ public class DataUtil {
         return convertDateToString(dpp);
     }
 
-    public String calculaDPC(Date date) {
+    public String calculaDPC(Date dataDUM) {
         Calendar d = Calendar.getInstance();
-        d.setTime(date);
+        d.setTime(dataDUM);
         d.add(Calendar.DAY_OF_MONTH, 14);
         Date dpc = d.getTime();
         return convertDateToString(dpc);
@@ -71,9 +71,49 @@ public class DataUtil {
             numDias = numDias - 7;
             numSemana++;
         }
+        return formataIG(numDias, numSemana);
+    }
 
-        if(numDias < 0 || numDias ==0 && numSemana == 0)
-        return "";
-        return numSemana + " Semana(s) e " + numDias + " dia(s)";
+    private String formataIG(int numDias, int numSemana) {
+        String dia = " dia";
+        String semana = " semana";
+
+        if(numDias < 0 || numDias == 0 && numSemana == 0)
+            return "";
+
+        if(numDias > 1){
+            dia = " dias";
+        } else if(numDias == 0 ){
+            if(numSemana > 1){
+                semana = " semanas";
+            }
+            return numSemana + semana;
+        }
+        if(numSemana > 1){
+            semana = " semanas";
+        } else if(numSemana == 0){
+            return  numDias + dia;
+        }
+        return numSemana + semana + " e " + numDias + dia;
+    }
+
+    public Date calculaDPPporIG (int semanas, int dias, Date dataUSG){
+        int totalDias = (semanas * 7) + dias;
+        int igRestante = 280 - totalDias;
+
+        Calendar d = Calendar.getInstance();
+        d.setTime(dataUSG);
+        d.add(Calendar.DAY_OF_MONTH, igRestante);
+        dataUSG = d.getTime();
+        return dataUSG;
+    }
+
+    public String calculaDUMporDPP(Date dataDPP) {
+        Calendar d = Calendar.getInstance();
+        d.setTime(dataDPP);
+
+        d.add(Calendar.DAY_OF_MONTH, -280);
+        Date dpp = d.getTime();
+        return convertDateToString(dpp);
     }
 }
