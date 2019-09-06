@@ -209,7 +209,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/titulo_resultado"
         android:textColor="#646464"
@@ -262,18 +262,18 @@
         app:layout_constraintTop_toBottomOf="@+id/calcula_imc_barra_abaixo" />
 
     <View
-        android:id="@+id/calculaa_imc_barra_sobrepeso"
+        android:id="@+id/calcula_imc_barra_sobrepeso"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="3dp"
-        android:background="#E4DACC"
+        android:background="#458A63"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor2"
         app:layout_constraintTop_toBottomOf="@+id/calcula_imc_barra_adequado" />
 
     <View
-        android:id="@+id/calculaa_imc_barra_acima"
+        android:id="@+id/calcula_imc_barra_obeso"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="3dp"
@@ -281,7 +281,7 @@
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor2"
-        app:layout_constraintTop_toBottomOf="@+id/calculaa_imc_barra_sobrepeso" />
+        app:layout_constraintTop_toBottomOf="@+id/calcula_imc_barra_sobrepeso" />
 
     <TextView
         android:id="@+id/textView8"
@@ -371,6 +371,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/imc_abaixo_de_20_40"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_abaixo"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
@@ -381,6 +382,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/abaixo_do_peso"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_abaixo"
         app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="@+id/textView14"
@@ -391,6 +393,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/imc_entre_20_50_a_25_40"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_adequado"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
@@ -401,6 +404,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/peso_ideal"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_adequado"
         app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="@+id/textView14"
@@ -411,39 +415,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/imc_entre_25_50_a_30_30"
-        app:layout_constraintBottom_toBottomOf="@+id/calculaa_imc_barra_sobrepeso"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_sobrepeso"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/calculaa_imc_barra_sobrepeso" />
+        app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_sobrepeso" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sobrepeso"
-        app:layout_constraintBottom_toBottomOf="@+id/calculaa_imc_barra_sobrepeso"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_sobrepeso"
         app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/calculaa_imc_barra_sobrepeso" />
+        app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_sobrepeso" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/imc_acima_de_30_40"
-        app:layout_constraintBottom_toBottomOf="@+id/calculaa_imc_barra_acima"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_obeso"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/calculaa_imc_barra_acima" />
+        app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_obeso" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/obesidade"
-        app:layout_constraintBottom_toBottomOf="@+id/calculaa_imc_barra_acima"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_obeso"
         app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/calculaa_imc_barra_acima" />
+        app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_obeso" />
 
 </android.support.constraint.ConstraintLayout>
