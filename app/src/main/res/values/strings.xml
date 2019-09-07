@@ -39,14 +39,11 @@
     <string name="semanas">sem.</string>
     <string name="faixa_imc">FAIXA IMC</string>
     <string name="peso_caps">PESO</string>
-    <string name="imc_abaixo_de_20_40">Abaixo de 20,40</string>
     <string name="abaixo_do_peso">Abaixo do peso</string>
-    <string name="imc_entre_20_50_a_25_40">Entre 20,50 a 25,40</string>
     <string name="peso_ideal">Peso ideal</string>
-    <string name="imc_entre_25_50_a_30_30">Entre 25,50 a 30,30</string>
     <string name="sobrepeso">Sobrepeso</string>
-    <string name="imc_acima_de_30_40">Acima de 30,40</string>
     <string name="obesidade">Obesidade</string>
     <string name="titulo_resultado">RESULTADO</string>
+    <string name="resultado2">-</string>
 
 </resources>

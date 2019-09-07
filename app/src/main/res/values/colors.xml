@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#004431</color>
     <color name="colorAccent">#044E37</color>
     <color name="colorMenuBackground">#FFFF</color>
-    <color name="colorMenuColorTitle">#000000</color> 
+    <color name="colorMenuColorTitle">#000000</color>
+    <color name="colorBarraSelected">#458A63</color>
+    <color name="colorBarraPadrao">#E4DACC</color>
 </resources>
