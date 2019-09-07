@@ -84,7 +84,7 @@
 
     <View
         android:id="@+id/calcula_usg_barra_dum1"
-        android:layout_width="110dp"
+        android:layout_width="115dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="#E4DACC"
@@ -95,7 +95,7 @@
 
     <View
         android:id="@+id/calcula_usg_barra_dum2"
-        android:layout_width="110dp"
+        android:layout_width="115dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="#E4DACC"
@@ -106,7 +106,7 @@
 
     <View
         android:id="@+id/calcula_usg_barra_dum3"
-        android:layout_width="110dp"
+        android:layout_width="115dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:background="#E4DACC"
@@ -134,36 +134,36 @@
 
     <ImageButton
         android:id="@+id/calcula_imc_btn_peso"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_peso"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum1"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dum1"
         app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum1"
-        app:srcCompat="@drawable/ic_editar_verdelogo_24dp"
-        android:contentDescription="@string/btn_peso" />
+        app:srcCompat="@drawable/ic_editar_verdelogo_24dp" />
 
     <ImageButton
         android:id="@+id/calcula_imc_btn_altura"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_altura"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum3"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dum3"
         app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum3"
-        app:srcCompat="@drawable/ic_editar_verdelogo_24dp"
-        android:contentDescription="@string/btn_altura" />
+        app:srcCompat="@drawable/ic_editar_verdelogo_24dp" />
 
     <ImageButton
         android:id="@+id/calcula_imc_btn_ig"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="0dp"
         android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/btn_ig_semanas"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_dum2"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_barra_dum2"
         app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_dum2"
-        app:srcCompat="@drawable/ic_editar_verdelogo_24dp"
-        android:contentDescription="@string/btn_ig_semanas" />
+        app:srcCompat="@drawable/ic_editar_verdelogo_24dp" />
 
     <TextView
         android:id="@+id/calcula_imc_resultado_peso"
@@ -266,7 +266,7 @@
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="3dp"
-        android:background="#458A63"
+        android:background="#E4DACC"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/calcula_usg_divisor2"
@@ -367,10 +367,11 @@
         app:layout_constraintVertical_bias="0.529" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/calcula_imc_faixa_abaixo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imc_abaixo_de_20_40"
+        android:text="@string/resultado2"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_abaixo"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
@@ -389,10 +390,10 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_abaixo" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/calcula_imc_faixa_ideal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imc_entre_20_50_a_25_40"
+        android:text="@string/resultado2"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_adequado"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
@@ -411,10 +412,10 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_adequado" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/calcula_imc_faixa_sobrepeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imc_entre_25_50_a_30_30"
+        android:text="@string/resultado2"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_sobrepeso"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
@@ -433,10 +434,10 @@
         app:layout_constraintTop_toTopOf="@+id/calcula_imc_barra_sobrepeso" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/calcula_imc_faixa_obesidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imc_acima_de_30_40"
+        android:text="@string/resultado2"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calcula_imc_barra_obeso"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
