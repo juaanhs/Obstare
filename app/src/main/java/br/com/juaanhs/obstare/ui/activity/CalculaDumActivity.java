@@ -57,10 +57,10 @@ public class CalculaDumActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String stringDUM = dataUtil.IntsToString(year, month, dayOfMonth);
                         resultadoDum.setText(stringDUM);
-                        Date date = dataUtil.convertStringToDate(stringDUM);
-                        resultadoDpp.setText(dataUtil.calculaDPP(date));
-                        resultadoDdc.setText(dataUtil.calculaDPC(date));
-                        resultadoIg.setText(dataUtil.calculaIG(date));
+                        Date dataDUM = dataUtil.convertStringToDate(stringDUM);
+                        resultadoDpp.setText(dataUtil.calculaDPP(dataDUM));
+                        resultadoDdc.setText(dataUtil.calculaDPC(dataDUM));
+                        resultadoIg.setText(dataUtil.calculaIG(dataDUM));
                         setNovaDataAtual(view);
                     }
                 }, ano, mes, dia);

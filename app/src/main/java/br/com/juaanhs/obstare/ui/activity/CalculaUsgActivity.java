@@ -24,25 +24,19 @@ public class CalculaUsgActivity extends AppCompatActivity {
 
     private TextView resultadoDum, resultadoDpc, resultadoIgSemanas, resultadoUsg, resultadoDpp, resultadoIgDias;
     private ImageButton btnUsgSemanas, btnUsgDias, btnDataUsg;
-    private Calendar calendar;
     private Date dataUSG;
     private boolean entrada1, entrada2, entrada3;
     private int ano, mes, dia, igDias = 0, igSemanas = 0;
-    private DatePickerDialog datePickerDialog;
     private DataUtil dataUtil;
-
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcula_usg);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        dataUtil = new DataUtil();
-        entrada1 = false;
-        entrada2 = false;
-        entrada3 = false;
         setDataCalendario();
         inicializaCamposAndBotoes();
         configuraBtnUsg();
@@ -66,8 +60,8 @@ public class CalculaUsgActivity extends AppCompatActivity {
                             return false;
                         }
                         igSemanas = aDouble.intValue();
-                        String string = "" + aDouble.intValue();
-                        resultadoIgSemanas.setText(string);
+                        String strSemanas = "" + aDouble.intValue();
+                        resultadoIgSemanas.setText(strSemanas);
                         entrada3 = true;
                         verificaEntradas();
                         return false;
@@ -77,7 +71,6 @@ public class CalculaUsgActivity extends AppCompatActivity {
                 dialog.getDotButton().setVisibility(View.INVISIBLE);
             }
         });
-
     }
 
     private void configuraBtnDias() {
@@ -96,8 +89,8 @@ public class CalculaUsgActivity extends AppCompatActivity {
                             return false;
                         }
                         igDias = aDouble.intValue();
-                        String string = "" + aDouble.intValue();
-                        resultadoIgDias.setText(string);
+                        String strDias = "" + aDouble.intValue();
+                        resultadoIgDias.setText(strDias);
                         entrada1 = true;
                         verificaEntradas();
                         return false;
@@ -121,14 +114,13 @@ public class CalculaUsgActivity extends AppCompatActivity {
     }
 
     private void configuraCalendario() {
-        datePickerDialog = new DatePickerDialog(CalculaUsgActivity.this,
+        DatePickerDialog datePickerDialog = new DatePickerDialog(CalculaUsgActivity.this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String stringUSG = dataUtil.IntsToString(year, month, dayOfMonth);
                         dataUSG = dataUtil.convertStringToDate(stringUSG);
                         resultadoUsg.setText(stringUSG);
-                        //TESTE
                         entrada2 = true;
                         verificaEntradas();
                         setNovaDataAtual(view);
@@ -146,9 +138,7 @@ public class CalculaUsgActivity extends AppCompatActivity {
 
     private void imprimeCalculoDatas() {
         Date dataDPP = imprimirDPP();
-
         String strDataDUM = imprimirDUM(dataDPP);
-
         imprimirDPC(strDataDUM);
     }
 
@@ -181,6 +171,10 @@ public class CalculaUsgActivity extends AppCompatActivity {
         resultadoUsg = findViewById(R.id.calcula_usg_resultado_usg);
         resultadoIgDias = findViewById(R.id.calcula_usg_resultado_dias_ultrasom);
         resultadoIgSemanas = findViewById(R.id.calcula_usg_resultado_semanas_ultrasom);
+        dataUtil = new DataUtil();
+        entrada1 = false;
+        entrada2 = false;
+        entrada3 = false;
     }
 
     private void setNovaDataAtual(DatePicker view) {
@@ -190,7 +184,7 @@ public class CalculaUsgActivity extends AppCompatActivity {
     }
     //TODO delegar responsabilidade para DataUtil
     private void setDataCalendario() {
-        calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         ano = calendar.get(Calendar.YEAR);
         mes = calendar.get(Calendar.MONTH);
         dia = calendar.get(Calendar.DAY_OF_MONTH);
