@@ -33,4 +33,6 @@ dependencies {
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.7.0@aar'
     // Dialog keyboard number
     implementation 'br.com.forusers.heinsinputdialogs:input-dialogs-library:0.1.4'
+    // Multi State Toggle Button
+    implementation 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2'
 }

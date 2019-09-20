@@ -45,5 +45,33 @@
     <string name="obesidade">Obesidade</string>
     <string name="titulo_resultado">RESULTADO</string>
     <string name="resultado2">-</string>
+    <string-array name="op1">
+        <item>0</item>
+        <item>1-2 cm</item>
+        <item>3-4 cm</item>
+        <item>5 cm</item>
+    </string-array>
+    <string-array name="op2">
+        <item>-3</item>
+        <item>-2</item>
+        <item>-1/0</item>
+        <item>+1</item>
+    </string-array>
+    <string-array name="op3">
+        <item>0-30%</item>
+        <item>40-50%</item>
+        <item>60-70%</item>
+        <item>80%</item>
+    </string-array>
+    <string-array name="op4">
+        <item>firme</item>
+        <item>imtermediário</item>
+        <item>Amolecido</item>
+    </string-array>
+    <string-array name="op5">
+        <item>posterior</item>
+        <item>imtermediária</item>
+        <item>anterior</item>
+    </string-array>
 
 </resources>

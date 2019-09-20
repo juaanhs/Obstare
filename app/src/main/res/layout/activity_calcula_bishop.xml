@@ -8,6 +8,7 @@
     tools:context="br.com.juaanhs.obstare.ui.activity.CalculaBishopActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
@@ -24,4 +25,143 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/bishop_multibtn1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/bishop_titulo1"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_titulo1"
+        app:mstbPrimaryColor="@color/colorPrimary"
+        app:mstbSecondaryColor="@color/colorBarraPadrao"
+        app:values="@array/op1">
+    </org.honorato.multistatetogglebutton.MultiStateToggleButton>
+
+    <TextView
+        android:id="@+id/bishop_titulo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Dilatação cervical:"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/indice_de_bishop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout4" />
+
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/bishop_multibtn3"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn2"
+        app:layout_constraintStart_toStartOf="@+id/bishop_titulo3"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_titulo3"
+        app:mstbPrimaryColor="@color/colorPrimary"
+        app:mstbSecondaryColor="@color/colorBarraPadrao"
+        app:values="@array/op3" />
+
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/bishop_multibtn2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn1"
+        app:layout_constraintStart_toStartOf="@+id/bishop_titulo2"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_titulo2"
+        app:mstbPrimaryColor="@color/colorPrimary"
+        app:mstbSecondaryColor="@color/colorBarraPadrao"
+        app:values="@array/op2"></org.honorato.multistatetogglebutton.MultiStateToggleButton>
+
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/bishop_multibtn5"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn4"
+        app:layout_constraintStart_toStartOf="@+id/bishop_titulo5"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_titulo5"
+        app:mstbPrimaryColor="@color/colorPrimary"
+        app:mstbSecondaryColor="@color/colorBarraPadrao"
+        app:values="@array/op5"></org.honorato.multistatetogglebutton.MultiStateToggleButton>
+
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/bishop_multibtn4"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn3"
+        app:layout_constraintStart_toStartOf="@+id/bishop_titulo4"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_titulo4"
+        app:mstbPrimaryColor="@color/colorPrimary"
+        app:mstbSecondaryColor="@color/colorBarraPadrao"
+        app:values="@array/op4"></org.honorato.multistatetogglebutton.MultiStateToggleButton>
+
+    <TextView
+        android:id="@+id/bishop_titulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Altura da apresentação:"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bishop_multibtn1"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_multibtn1" />
+
+    <TextView
+        android:id="@+id/bishop_titulo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Apagamento do colo:"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bishop_multibtn2"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_multibtn2" />
+
+    <TextView
+        android:id="@+id/bishop_titulo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Consistência:"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bishop_multibtn3"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_multibtn3" />
+
+    <TextView
+        android:id="@+id/bishop_titulo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Posição:"
+        app:layout_constraintEnd_toEndOf="@+id/bishop_multibtn4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bishop_multibtn4"
+        app:layout_constraintTop_toBottomOf="@+id/bishop_multibtn4" />
 </android.support.constraint.ConstraintLayout>
