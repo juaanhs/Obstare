@@ -49,7 +49,7 @@
         <item>0</item>
         <item>1-2 cm</item>
         <item>3-4 cm</item>
-        <item>5 cm</item>
+        <item>> 5 cm</item>
     </string-array>
     <string-array name="op2">
         <item>-3</item>
@@ -61,17 +61,17 @@
         <item>0-30%</item>
         <item>40-50%</item>
         <item>60-70%</item>
-        <item>80%</item>
+        <item>> 80%</item>
     </string-array>
     <string-array name="op4">
         <item>firme</item>
-        <item>imtermediário</item>
+        <item>médio</item>
         <item>Amolecido</item>
     </string-array>
     <string-array name="op5">
         <item>posterior</item>
         <item>imtermediária</item>
-        <item>anterior</item>
+        <item>central</item>
     </string-array>
 
 </resources>
