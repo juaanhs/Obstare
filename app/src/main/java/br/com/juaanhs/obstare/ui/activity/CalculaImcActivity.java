@@ -379,7 +379,7 @@ public class CalculaImcActivity extends AppCompatActivity {
                     public boolean onInputDouble(AlertDialog alertDialog, Double aDouble) {
                         if(aDouble > 200.00){
                             Toast.makeText(CalculaImcActivity.this,
-                                    "O peso deve ser menor que 400kg",
+                                    "O peso deve ser menor que 200kg",
                                     Toast.LENGTH_LONG).show();
                             resultadoPeso.setText("_");
                             return false;
