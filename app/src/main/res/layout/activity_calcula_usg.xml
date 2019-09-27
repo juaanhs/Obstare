@@ -29,9 +29,12 @@
         android:layout_width="110dp"
         android:layout_height="36dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
         android:background="#E4DACC"
+        app:layout_constraintBottom_toTopOf="@+id/calcula_usg_barra_ultrasom"
         app:layout_constraintEnd_toEndOf="@+id/calcula_usg_divisor"
-        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/calcula_usg_barra_semanas"
@@ -40,9 +43,12 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#E4DACC"
+        app:layout_constraintBottom_toTopOf="@+id/calcula_usg_barra_ultrasom"
         app:layout_constraintEnd_toStartOf="@+id/calcula_usg_barra_dias"
-        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor" />
+        app:layout_constraintTop_toBottomOf="@+id/calcula_usg_divisor"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/calcula_usg_barra_ultrasom"
@@ -95,10 +101,16 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_dum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="end"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -111,18 +123,19 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_usg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="end"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_titulo_usg"
+        app:layout_constraintBottom_toBottomOf="@+id/calcula_usg_barra_ultrasom"
         app:layout_constraintEnd_toStartOf="@+id/calcula_usg_btn_calendario_usg"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/calcula_usg_titulo_usg"
-        app:layout_constraintTop_toTopOf="@+id/calcula_usg_titulo_usg"
+        app:layout_constraintTop_toTopOf="@+id/calcula_usg_barra_ultrasom"
         tools:text="31/10/2019" />
 
     <TextView
@@ -162,10 +175,15 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_concepcao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:autoSizeTextType="uniform"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -225,10 +243,11 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_dpp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="end"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -330,8 +349,11 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_semanas_ultrasom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
         android:text="@string/retorno_semanas_ultrasom"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -367,11 +389,14 @@
 
     <TextView
         android:id="@+id/calcula_usg_resultado_dias_ultrasom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/retorno_dias_ultrasom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
         android:background="@android:color/transparent"
+        android:gravity="center"
         android:inputType="number"
+        android:text="@string/retorno_dias_ultrasom"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"

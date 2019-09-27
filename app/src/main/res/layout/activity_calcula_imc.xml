@@ -167,8 +167,11 @@
 
     <TextView
         android:id="@+id/calcula_imc_resultado_peso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
         android:text="@string/resultado"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -180,8 +183,10 @@
 
     <TextView
         android:id="@+id/calcula_imc_resultado_altura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
         android:gravity="center"
         android:text="@string/resultado"
         android:textColor="@color/colorPrimary"
@@ -194,8 +199,11 @@
 
     <TextView
         android:id="@+id/calcula_imc_resultado_ig"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
         android:text="@string/resultado"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -330,9 +338,12 @@
 
     <TextView
         android:id="@+id/calcula_imc_resultado_imc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:text=""
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         android:textStyle="bold"
